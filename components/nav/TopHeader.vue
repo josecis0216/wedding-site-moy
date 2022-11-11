@@ -1,7 +1,7 @@
 <template>
     <div>
         <b-navbar toggleable="lg" type="dark" variant="info">
-            <b-navbar-brand href="#">C&C</b-navbar-brand>
+            <b-navbar-brand><nuxt-link to="/" id="brandLink">C&C</nuxt-link></b-navbar-brand>
 
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -20,3 +20,17 @@
         </b-navbar>
     </div>
 </template>
+
+<style>
+#brandLink, #brandLink:hover {
+    color: white;
+}
+a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+}
+a:hover {
+    text-decoration: none;
+    color:white;
+}
+</style>

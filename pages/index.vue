@@ -6,7 +6,7 @@
         <div class="mt-8 bg-white overflow-hidden shadow sm:rounded-lg p-6">
           <div>
             <b-carousel id="carousel-1" v-model="slide" :interval="4000" controls indicators background="#ababab"
-              img-width="1024" img-height="480" style="text-shadow: 1px 1px 2px #333;" @sliding-start="onSlideStart"
+              img-width="824" img-height="280" style="text-shadow: 1px 1px 2px #333;" @sliding-start="onSlideStart"
               @sliding-end="onSlideEnd">
               <!-- Text slides with image -->
               <b-carousel-slide caption="First slide" text="Nulla vitae elit libero, a pharetra augue mollis interdum."
@@ -33,16 +33,19 @@
         </div>
       </div>
     </div>
+    <BottomFooter />
   </section>
 </template>
 
 <script>
 import TopHeader from '@/components/nav/TopHeader.vue'
+import BottomFooter from '@/components/nav/BottomFooter.vue'
 
 export default {
   name: 'IndexPage',
   components: {
-    TopHeader
+    TopHeader,
+    BottomFooter
   },
   data() {
     return {

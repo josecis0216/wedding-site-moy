@@ -95,6 +95,12 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (max-width: 390px) {
+  .sectionBody {
+    background-position-y: -6rem;
+    background-position-x: -18rem;
+  }
+}
 .sectionBody {
     background-image: url('https://images.pexels.com/photos/313707/pexels-photo-313707.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
     background-size: cover;
