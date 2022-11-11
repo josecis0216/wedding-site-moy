@@ -8,7 +8,7 @@
             <b-collapse id="nav-collapse" is-nav>
                 <!-- Right aligned nav items -->
                 <b-navbar-nav class="ml-auto">
-                    <b-nav-item href="#">RSVP</b-nav-item>             
+                    <b-nav-item><nuxt-link to="/rsvp">RSVP</nuxt-link></b-nav-item>             
                     <b-nav-item-dropdown text="ABOUT" right>
                         <b-dropdown-item href="#">GIFTS</b-dropdown-item>
                         <b-dropdown-item href="#">OUR STORY</b-dropdown-item>
