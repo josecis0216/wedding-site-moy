@@ -35,3 +35,20 @@
         </div>
     </section>
 </template>
+
+<style scoped>
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+a.nav-link {
+    margin: 10px;
+    font-size: 25px;
+}
+</style>
