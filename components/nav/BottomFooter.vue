@@ -5,10 +5,16 @@
                 <b-row>
                     <b-col>
                         <h5 style="color:white;">
-                            <nuxt-link to="/">HOME</nuxt-link>
+                            <nuxt-link to="/rsvp">RSVP</nuxt-link>
                         </h5>
                         <h5 style="color:white;">
-                            <nuxt-link to="/rsvp">RSVP</nuxt-link>
+                            <nuxt-link to="/story">OUR STORY</nuxt-link>
+                        </h5>
+                        <h5 style="color:white;">
+                            <nuxt-link to="/qa">Q + A</nuxt-link>
+                        </h5>
+                        <h5 style="color:white;">
+                            <nuxt-link to="/">HOME</nuxt-link>
                         </h5>
                     </b-col>
                     <b-col></b-col>
