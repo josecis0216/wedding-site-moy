@@ -2,7 +2,7 @@
   <section>
 
     <div class="header-img">
-      <img src="~/static/sunflower.png" alt="sunflower header image" />
+      <img src="~/static/sunflower.png" alt="sunflower header image" class="header-sunflower-img"/>
     </div>
     <TopHeader />
     <div>
@@ -116,6 +116,12 @@ img.backgroundImg {
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
   animation-duration: 2s;
+}
+
+@media only screen and (max-width:500px) {
+  img.header-sunflower-img {
+    width: 100%;
+  }
 }
 
 @keyframes fadeInOpacity {

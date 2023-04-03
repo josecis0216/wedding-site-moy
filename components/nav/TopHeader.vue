@@ -30,4 +30,11 @@ a.nav-link {
 .nuxt-link-exact-active {
     border-bottom: 5px solid pink;
 }
+
+@media only screen and (max-width: 500px) {
+    a.nav-link {
+        margin: 0px;
+        font-size: 20px;
+    }
+}
 </style>

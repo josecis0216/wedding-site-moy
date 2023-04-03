@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'wedding-site',
+    title: 'Clarissa & Carlos',
     htmlAttrs: {
       lang: 'en',
     },
