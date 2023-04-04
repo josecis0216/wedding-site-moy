@@ -5,11 +5,7 @@
       <img src="~/static/sunflower.png" alt="sunflower header image" class="header-sunflower-img"/>
     </div>
     <TopHeader />
-    <div>
-      <h1 class="over-text fade-in">Clarissa & Carlos</h1>
-      <p class="home-details">June 24, 2023 SALT LAKE CITY, UT</p>
-      <P class="home-details">{{ daysToGo }} DAYS TO GO!</P>
-    </div>
+    
     <b-container>
       <b-row>
         <b-col>
@@ -17,18 +13,7 @@
         </b-col>
       </b-row>
     </b-container>
-    <div class="relative flex items-top justify-center min-h-screen bg-gray-100 sm:items-center sm:pt-0">
-      <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
-        <div class="mt-8 bg-white overflow-hidden shadow sm:rounded-lg p-6">
 
-          <div class="wrapper">
-            <transition name="fade">
-
-            </transition>
-          </div>
-        </div>
-      </div>
-    </div>
     <BottomFooter />
   </section>
 </template>
@@ -49,15 +34,7 @@ export default {
       sliding: null,
       src: '/public/images/clarissa_carlits.jpeg',
       loaded: false,
-      daysToGo: '',
     }
-  },
-  created() {
-    const wD = new Date('2023-06-24');
-    const d = new Date();
-    const dayDiff = Math.abs(wD - d);
-
-    this.daysToGo = Math.ceil(dayDiff / (1000 * 60 * 60 * 24));
   },
   methods: {
     onLoaded() {
@@ -85,19 +62,6 @@ img.backgroundImg {
   padding-bottom: 25px;
 }
 
-.over-text {
-  text-align: center;
-  font-size: 100px;
-  font-family: 'Allura, Helvetica, sans-serif';
-  letter-spacing: 15px;
-}
-
-.home-details {
-  text-align: center;
-  font-size: 35px;
-  font-family: 'serif';
-}
-
 .fade-enter-active {
   transition: opacity 3s ease-in-out;
 }
@@ -108,14 +72,6 @@ img.backgroundImg {
 
 .fade-enter {
   opacity: 0;
-}
-
-.fade-in {
-  opacity: 1;
-  animation-name: fadeInOpacity;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in;
-  animation-duration: 2s;
 }
 
 @media only screen and (max-width:500px) {

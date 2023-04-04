@@ -5,31 +5,60 @@
       <b-container>
         <b-row>
           <b-col>
-            <b-card style="max-width: 40rem;margin:200px auto 0px auto;">
+            <b-card style="max-width: 40rem; margin: 200px auto 0px auto">
               <b-form v-if="show" @submit.prevent="onSubmit" @reset="onReset">
-                <b-form-group id="input-group-1" label="Your Name:" label-for="input-1">
-                  <b-form-input id="input-1" v-model="form.fullName" placeholder="Enter name" required></b-form-input>
+                <b-form-group
+                  id="input-group-1"
+                  label="Your Name:"
+                  label-for="input-1"
+                >
+                  <b-form-input
+                    id="input-1"
+                    v-model="form.fullName"
+                    placeholder="Enter name"
+                    required
+                  ></b-form-input>
                 </b-form-group>
 
-                <b-form-group id="input-group-2" v-slot="{ ariaDescribedby }">
-                  <b-form-checkbox-group v-model="form.brideOrGroom" id="checkboxes-2"
-                    :aria-describedby="ariaDescribedby">
-                    <b-form-checkbox value="bride">I know the bride</b-form-checkbox>
-                    <b-form-checkbox value="groom">I know the groom</b-form-checkbox>
+                <b-button pill variant="outline-success" @click="showAddGuests" v-show="!showGuests">Add Guest</b-button>
+                
+                <b-form-group v-for="(guest,k) in form.guests" :key="k" v-show="showGuests">
+                  <b-form-input type="text" class="form-control" placeholder="Guest Name" v-model="guest.name"></b-form-input>
+                  <span>
+                    <b-button pill variant="outline-danger" @click="remove(k)" v-show="k || ( !k && form.guests.length > 1)">Remove</b-button>
+                    <b-button pill variant="outline-success" @click="add(k)" v-show="k == form.guests.length-1">Add Guest</b-button>
+                  </span>
+                </b-form-group>
+                
+
+                <b-form-group
+                  id="input-group-check"
+                  v-slot="{ ariaDescribedby }"
+                >
+                  <b-form-checkbox-group
+                    v-model="form.brideOrGroom"
+                    id="checkboxes-2"
+                    :aria-describedby="ariaDescribedby"
+                  >
+                    <b-form-checkbox value="bride"
+                      >I know the bride</b-form-checkbox
+                    >
+                    <b-form-checkbox value="groom"
+                      >I know the groom</b-form-checkbox
+                    >
                   </b-form-checkbox-group>
                 </b-form-group>
 
                 <b-card-text></b-card-text>
-                <!-- <b-form-group id="input-group-3" v-slot="{ ariaDescribedby }">
-                  <b-form-checkbox-group id="checkboxes-3" :aria-describedby="ariaDescribedby">
-                    <b-form-checkbox v-model="form.checkedUnderstand" value="1" unchecked-value="0">I understand that kids
-                      younger
-                      than 12 years old will not be allowed at the reception ceremony</b-form-checkbox>
-                  </b-form-checkbox-group>
-                </b-form-group> -->
-                <b-form-checkbox id="checkbox-accept" v-model="form.checkedUnderstand" name="checkbox-accept"
-                  value="accepted" unchecked-value="not_accepted">
-                  I understand that kids younger than 12 years old will not be allowed at the reception ceremony
+                <b-form-checkbox
+                  id="checkbox-accept"
+                  v-model="form.checkedUnderstand"
+                  name="checkbox-accept"
+                  value="accepted"
+                  unchecked-value="not_accepted"
+                >
+                  I understand that kids younger than 18 years old will not be
+                  allowed at the reception ceremony
                 </b-form-checkbox>
 
                 <b-button type="submit" variant="primary">Submit</b-button>
@@ -65,12 +94,32 @@ export default {
       form: {
         fullName: '',
         brideOrGroom: [],
+        guests: [{
+          name: ''
+        }],
         checkedUnderstand: 'not_accepted',
       },
       show: true,
+      showGuests: false
     }
   },
   methods: {
+    showAddGuests() {
+      this.showGuests = true
+    },
+
+    add() {
+      this.form.guests.push({
+        name: ''
+      })
+      console.log(this.form.guests)
+    },
+
+    remove(index) {
+      this.form.guests.splice(index, 1)
+      console.log(this.form.guests)
+    },
+
     onSubmit(event) {
       if (this.form.checkedUnderstand === 'accepted') {
         console.log('SUCCESS! Form was submitted')
