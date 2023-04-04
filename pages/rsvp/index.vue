@@ -7,56 +7,35 @@
           <b-col>
             <b-card style="max-width: 40rem; margin: 200px auto 0px auto">
               <b-form v-if="show" @submit.prevent="onSubmit" @reset="onReset">
-                <b-form-group
-                  id="input-group-1"
-                  label="Your Name:"
-                  label-for="input-1"
-                >
-                  <b-form-input
-                    id="input-1"
-                    v-model="form.fullName"
-                    placeholder="Enter name"
-                    required
-                  ></b-form-input>
+                <b-form-group id="input-group-1" label="Your Name:" label-for="input-1">
+                  <b-form-input id="input-1" v-model="form.fullName" placeholder="Enter name" required></b-form-input>
                 </b-form-group>
 
                 <b-button pill variant="outline-success" @click="showAddGuests" v-show="!showGuests">Add Guest</b-button>
-                
-                <b-form-group v-for="(guest,k) in form.guests" :key="k" v-show="showGuests">
-                  <b-form-input type="text" class="form-control" placeholder="Guest Name" v-model="guest.name"></b-form-input>
+
+                <b-form-group v-for="(guest, k) in form.guests" :key="k" v-show="showGuests">
+                  <b-form-input type="text" class="form-control" placeholder="Guest Name"
+                    v-model="guest.name"></b-form-input>
                   <span>
-                    <b-button pill variant="outline-danger" @click="remove(k)" v-show="k || ( !k && form.guests.length > 1)">Remove</b-button>
-                    <b-button pill variant="outline-success" @click="add(k)" v-show="k == form.guests.length-1">Add Guest</b-button>
+                    <b-button pill variant="outline-danger" @click="remove(k)"
+                      v-show="k || (!k && form.guests.length > 1)">Remove</b-button>
+                    <b-button pill variant="outline-success" @click="add(k)" v-show="k == form.guests.length - 1">Add
+                      Guest</b-button>
                   </span>
                 </b-form-group>
-                
 
-                <b-form-group
-                  id="input-group-check"
-                  v-slot="{ ariaDescribedby }"
-                >
-                  <b-form-checkbox-group
-                    v-model="form.brideOrGroom"
-                    id="checkboxes-2"
-                    :aria-describedby="ariaDescribedby"
-                  >
-                    <b-form-checkbox value="bride"
-                      >I know the bride</b-form-checkbox
-                    >
-                    <b-form-checkbox value="groom"
-                      >I know the groom</b-form-checkbox
-                    >
+
+                <b-form-group id="input-group-check" v-slot="{ ariaDescribedby }">
+                  <b-form-checkbox-group v-model="form.brideOrGroom" id="checkboxes-2"
+                    :aria-describedby="ariaDescribedby">
+                    <b-form-checkbox value="bride">I know the bride</b-form-checkbox>
+                    <b-form-checkbox value="groom">I know the groom</b-form-checkbox>
                   </b-form-checkbox-group>
                 </b-form-group>
 
                 <b-card-text></b-card-text>
-                <b-form-checkbox
-                  id="checkbox-accept"
-                  v-model="form.checkedUnderstand"
-                  name="checkbox-accept"
-                  value="accepted"
-                  unchecked-value="not_accepted"
-                >
+                <b-form-checkbox id="checkbox-accept" v-model="form.checkedUnderstand" name="checkbox-accept"
+                  value="accepted" unchecked-value="not_accepted">
                   I understand that kids younger than 18 years old will not be
                   allowed at the reception ceremony
                 </b-form-checkbox>
@@ -148,19 +127,18 @@ export default {
 </script>
 
 <style scoped>
-@media only screen and (max-width: 390px) {
-  .sectionBody {
-    background-position-y: -6rem;
-    background-position-x: -18rem;
-  }
-}
-
 .sectionBody {
   /* background-image: url('https://images.pexels.com/photos/313707/pexels-photo-313707.jpeg?auto=compress&cs=tinysrgb&w=960&h=450&dpr=2'); */
   background-image: url('~/static/wedding-photo-rsvp.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position-y: center;
-  height: 860px;
+  min-height: 860px;
+}
+
+@media only screen and (max-width: 500px) {
+  .sectionBody {
+    background-position-y: 1rem;
+    background-position-x: -30rem;
+  }
 }
 </style>
