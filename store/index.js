@@ -52,11 +52,11 @@ export default {
                 const requestData = {
                     id: key,
                     fullName: responseData[key].fullName,
-                    brideOrGroom: responseData[key].message,
+                    brideOrGroom: responseData[key].brideOrGroom,
                     guests: responseData[key].guests
                 };
                 requests.push(requestData);
-                console.log(requestData);
+                // console.log(requestData);
             }
             context.commit('setRequests', requests);
         },

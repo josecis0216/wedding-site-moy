@@ -10,7 +10,7 @@
                         <span class="q-text">Q: Where can we find your gift registry?</span><br>
                         A: We appreciate any gift or even just having you celebrate with us; however, we are looking mostly
                         for a honeymoon fund. You can Venmo us here:
-                        <a href="https://venmo.com/u/Jose-Cisneros-8"><img
+                        <a href="https://account.venmo.com/u/Clarissa-Avila-2"><img
                                 style="display:inline;align-items:center; width:150px;height:150px;"
                                 src="~/static/venmo-icon.png" alt="venmo link for clarissa honeymoon fund" /></a>
                     </p>
