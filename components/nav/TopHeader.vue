@@ -63,7 +63,7 @@ a.nav-link {
 .home-details {
   text-align: center;
   font-size: 35px;
-  font-family: 'serif';
+  font-family: 'Allura, Helvetica, sans-serif';
 }
 
 .fade-in {

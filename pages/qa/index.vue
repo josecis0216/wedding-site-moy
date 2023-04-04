@@ -17,7 +17,7 @@
                     <p>
                         <span class="q-text">Q: Where to park for reception ceremony?</span><br>
                         A: Please park at Rosewood Park (1400 N 1200 W, Salt Lake City, UT). The park is located right
-                        behind the location of the reception ceremony.
+                        behind the location of the reception.
                     </p>
                     <p>
                         <span class="q-text">Q: Why aren't children under the age of 18 allowed?</span><br>

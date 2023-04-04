@@ -2,14 +2,18 @@
   <section>
 
     <div class="header-img">
-      <img src="~/static/sunflower.png" alt="sunflower header image" class="header-sunflower-img"/>
+      <img src="~/static/sunflower.png" alt="sunflower header image" class="header-sunflower-img" />
     </div>
     <TopHeader />
-    
+
     <b-container>
       <b-row>
         <b-col>
           <img v-show="loaded" src="~/static/clarissa_carlits.jpeg" class="icon backgroundImg" @load="onLoaded" />
+          <h2 class="home-details">Contribute To Our Honeymoon Fund</h2>
+          <a href="https://account.venmo.com/u/Clarissa-Avila-2">
+            <img src="~/static/clarissa-venmo.jpg" class="header-img" alt="clarissa venmo screenshot" />
+          </a>
         </b-col>
       </b-row>
     </b-container>
@@ -57,9 +61,14 @@ export default {
 
 img.backgroundImg {
   width: 100%;
-  height: 100%;
   opacity: .75;
   padding-bottom: 25px;
+}
+
+.home-details {
+  text-align: center;
+  font-size: 35px;
+  font-family: 'Allura, Helvetica, sans-serif';
 }
 
 .fade-enter-active {
