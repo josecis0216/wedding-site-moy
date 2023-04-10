@@ -36,8 +36,7 @@
                 <b-card-text></b-card-text>
                 <b-form-checkbox id="checkbox-accept" v-model="form.checkedUnderstand" name="checkbox-accept"
                   value="accepted" unchecked-value="not_accepted">
-                  I understand that kids younger than 18 years old will not be
-                  allowed at the reception
+                  I understand that no children are allowed, as this is an adult only event.
                 </b-form-checkbox>
 
                 <b-button type="submit" variant="primary">Submit</b-button>
@@ -107,7 +106,7 @@ export default {
           this.$router.push('/')
         })
       } else {
-        alert(JSON.stringify('Must agree that children 12 and younger are not allowed at reception please. Thank you.'))
+        alert(JSON.stringify('Must agree that no children are allowed at reception as this is an adult only event. Thank you.'))
       }
     },
     onReset(event) {

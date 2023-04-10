@@ -6,7 +6,7 @@
       <b-row>
         <b-col>
           <div style="max-width: 550px;margin:auto;line-height:30px;">
-            <h1 style="text-align: center">GO BULLDOGS</h1>
+            <h1 style="text-align: center">HOLY WAR</h1>
             <p>
               Clari and Litos met freshman year of high school back in August
               2009. Clarissa's first thought of Litos was, "wow that is some

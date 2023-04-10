@@ -20,7 +20,7 @@
                         behind the location of the reception.
                     </p>
                     <p>
-                        <span class="q-text">Q: Why aren't children under the age of 18 allowed?</span><br>
+                        <span class="q-text">Q: Why aren't children allowed?</span><br>
                         A: Unfortunately, we can only accomodate a certain number of guests. So, we hope you understand and
                         still come celebrate with us!
                     </p>

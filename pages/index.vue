@@ -12,7 +12,7 @@
           <img v-show="loaded" src="~/static/clarissa_carlits.jpeg" class="icon backgroundImg" @load="onLoaded" />
           <h2 class="home-details">Contribute To Our Honeymoon Fund</h2>
           <a href="https://account.venmo.com/u/Clarissa-Avila-2">
-            <img src="~/static/clarissa-venmo.jpg" class="header-img" alt="clarissa venmo screenshot" />
+            <img src="~/static/clarissa-venmo.jpg" class="venmo-img" alt="clarissa venmo screenshot" />
           </a>
         </b-col>
       </b-row>
@@ -71,6 +71,10 @@ img.backgroundImg {
   font-family: 'Allura, Helvetica, sans-serif';
 }
 
+.venmo-img {
+  text-align: center;
+}
+
 .fade-enter-active {
   transition: opacity 3s ease-in-out;
 }
@@ -85,6 +89,10 @@ img.backgroundImg {
 
 @media only screen and (max-width:500px) {
   img.header-sunflower-img {
+    width: 100%;
+  }
+
+  .venmo-img {
     width: 100%;
   }
 }
