@@ -64,7 +64,6 @@ export default {
             }
 
             requestData.id = responseData.name;
-            requestData.coachId = payload.coachId;
 
             context.commit('addRequest', requestData);
         },
@@ -96,11 +95,11 @@ export default {
 
             const responseData = await response.json();
 
-            if (!responseData.ok) {
+            if (!response.ok) {
                 const error = new Error(responseData.message || 'Failed to fetch data.');
-                throw error; 
+                throw error;
             }
-
+            console.log(responseData);
             const guestList = [];
             for (const key in responseData) {
                 const requestData = {
@@ -110,6 +109,7 @@ export default {
                 };
                 guestList.push(requestData);
             }
+            console.log(guestList);
             context.commit('setGuestList', guestList);
         }
     },
@@ -122,7 +122,7 @@ export default {
             return getters.requests && getters.requests.length > 0;
         },
         guestList(state) {
-            return state.guestList.guests;
+            return state.guestList;
         }
     },
 };

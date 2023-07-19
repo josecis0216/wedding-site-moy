@@ -26,9 +26,11 @@ export default {
             }
         }
     },
+    created() {
+        this.loadGuestList();
+    },
     methods: {
         onSubmit(event) {
-            this.loadGuestList();
             console.log(this.$store.guestList);
             // if (this.$store.getters.guestList.includes(this.form.fullName)) {
             //     console.log('Success! It is there!');
