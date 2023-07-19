@@ -5,7 +5,7 @@
             <b-container>
                 <b-row>
                     <b-col>
-                        <b-card style="max-width: 40rem; margin: 200px auto 0px auto">
+                        <b-card style="max-width: 40rem; margin: 50px auto">
                             <b-form v-if="show" @submit.prevent="onSubmit" @reset="onReset">
                                 <b-form-group id="input-group-1" label="Guest Name:" label-for="input-1">
                                     <b-form-input id="input-1" v-model="form.fullName" placeholder="Enter guest name"
@@ -58,6 +58,7 @@
 </template>
   
 <script>
+// SET NODE_OPTIONS=--openssl-legacy-provider && 
 import TopHeader from '@/components/nav/TopHeader.vue'
 import BottomFooter from '@/components/nav/BottomFooter.vue'
 
@@ -98,21 +99,26 @@ export default {
 
         onSubmit(event) {
             console.log('SUCCESS! Form was submitted')
-            this.$store.dispatch('rsvp', this.form).then(() => {
-                alert('Thank you for responding, can\'t wait to celebrate with you!')
-                this.$router.push('/')
+            this.$store.dispatch('addToGuestList', this.form).then(() => {
+                alert('You have successfully added a guest!');
+                // this.$router.push('/');
+                this.clearForm();
             })
         },
-        onReset(event) {
-            event.preventDefault()
-            // Reset our form values
+        clearForm() {
+            // clear form text boxes
             this.form.fullName = ''
             this.form.brideOrGroom = []
+            this.form.guests = []
             // Trick to reset/clear native browser form validation state
             this.show = false
             this.$nextTick(() => {
                 this.show = true
-            })
+            });
+        },
+        onReset(event) {
+            event.preventDefault()
+            this.clearForm();
         },
     },
 }
@@ -120,11 +126,11 @@ export default {
   
 <style scoped>
 .sectionBody {
-    /* background-image: url('https://images.pexels.com/photos/313707/pexels-photo-313707.jpeg?auto=compress&cs=tinysrgb&w=960&h=450&dpr=2'); */
+    /* background-image: url('https://images.pexels.com/photos/313707/pexels-photo-313707.jpeg?auto=compress&cs=tinysrgb&w=960&h=450&dpr=2'); 
     background-image: url('~/static/wedding-photo-rsvp.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 860px;
+    min-height: 860px;*/
 }
 
 @media only screen and (max-width: 500px) {

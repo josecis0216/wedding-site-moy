@@ -27,7 +27,7 @@
                 <b-row>
                     <b-col>
                         <div style="display:flex;justify-content:center;">
-                            <p>Copyright© DEVCIS 2022</p>
+                            <p>Copyright© DEVCIS {{ currentYear }}</p>
                         </div>
                     </b-col>
                 </b-row>
@@ -35,6 +35,16 @@
         </div>
     </section>
 </template>
+
+<script>
+export default {
+    data() {
+    return {
+      currentYear: new Date().getFullYear()
+    }
+  }
+}
+</script>
 
 <style scoped>
 a {

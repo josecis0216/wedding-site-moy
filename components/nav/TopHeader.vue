@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <h1 class="over-text fade-in">Clarissa & Carlos</h1>
+      <h1 class="over-text fade-in">Moy & Ashley</h1>
       <p class="home-details">June 24, 2023 <br />SALT LAKE CITY, UT</p>
       <P class="home-details">{{ daysToGo }} DAYS TO GO!</P>
     </div>

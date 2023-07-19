@@ -9,10 +9,10 @@
     <b-container>
       <b-row>
         <b-col>
-          <img v-show="loaded" src="~/static/clarissa_carlits.jpeg" class="icon backgroundImg" @load="onLoaded" />
+          <img v-show="loaded" src="~/static/wedding.jpg" class="icon backgroundImg" @load="onLoaded" />
           <h2 class="home-details">Contribute To Our Honeymoon Fund</h2>
-          <a href="https://account.venmo.com/u/Clarissa-Avila-2">
-            <img src="~/static/clarissa-venmo.jpg" class="venmo-img" alt="clarissa venmo screenshot" />
+          <a href="https://account.venmo.com/">
+            <img src="~/static/venmo.png" class="venmo-img" alt="venmo screenshot sample" />
           </a>
         </b-col>
       </b-row>
@@ -36,7 +36,7 @@ export default {
     return {
       slide: 0,
       sliding: null,
-      src: '/public/images/clarissa_carlits.jpeg',
+      src: '/public/images/wedding.jpg',
       loaded: false,
     }
   },

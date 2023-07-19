@@ -51,7 +51,7 @@ export default {
                 guests: payload.guests
                 //   message: payload.message,
             };
-            const response = await fetch(`https://moy-ashley-default-rtdb.firebaseio.com/requests.json`, {
+            const response = await fetch(`https://moy-ashley-default-rtdb.firebaseio.com/guest-list.json`, {
                 method: 'POST',
                 body: JSON.stringify(requestData)
             })
@@ -98,6 +98,7 @@ export default {
 
             if (!responseData.ok) {
                 const error = new Error(responseData.message || 'Failed to fetch data.');
+                throw error; 
             }
 
             const guestList = [];
