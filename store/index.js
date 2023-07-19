@@ -99,7 +99,6 @@ export default {
                 const error = new Error(responseData.message || 'Failed to fetch data.');
                 throw error;
             }
-            console.log(responseData);
             const guestList = [];
             for (const key in responseData) {
                 const requestData = {
@@ -109,7 +108,7 @@ export default {
                 };
                 guestList.push(requestData);
             }
-            console.log(guestList);
+            // console.log(guestList);
             context.commit('setGuestList', guestList);
         }
     },

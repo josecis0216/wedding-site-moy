@@ -5,7 +5,8 @@
                 <b-card class="cardBody">
                     <b-form @submit.prevent="onSubmit" @reset="onReset">
                         <b-form-group id="input-group-1" label="Your Full Name:" label-for="input-1">
-                            <b-form-input id="inputName" placeholder="Enter full name" required></b-form-input>
+                            <b-form-input id="inputName" placeholder="Enter full name" required
+                                v-model="form.fullName"></b-form-input>
                         </b-form-group>
 
                         <b-button type="submit" variant="primary">Submit</b-button>
@@ -31,10 +32,13 @@ export default {
     },
     methods: {
         onSubmit(event) {
-            console.log(this.$store.guestList);
-            // if (this.$store.getters.guestList.includes(this.form.fullName)) {
-            //     console.log('Success! It is there!');
-            // }
+            const guestList = this.$store.getters.guestList;
+            for (const key in guestList) {
+                if (guestList[key].fullName.localeCompare(this.form.fullName, undefined, { sensitivity: 'base' })) {
+                    console.log("it is there!" + key);
+                    // redirect passing the person's id to /rsvp/confirm:id
+                }
+            }
         },
         onReset(event) {
             this.form.fullName = ""
@@ -54,8 +58,8 @@ export default {
 
 <style>
 .card {
-  box-shadow: -5px 5px 10px gray;
-  margin: 25px auto;
-  max-width: 500px;
+    box-shadow: -5px 5px 10px gray;
+    margin: 25px auto;
+    max-width: 500px;
 }
 </style>
