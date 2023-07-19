@@ -34,9 +34,10 @@ export default {
         onSubmit(event) {
             const guestList = this.$store.getters.guestList;
             for (const key in guestList) {
-                if (guestList[key].fullName.localeCompare(this.form.fullName, undefined, { sensitivity: 'base' })) {
-                    console.log("it is there!" + key);
+                if (guestList[key].fullName.localeCompare(this.form.fullName, undefined, { sensitivity: "base" }) === 0) {
+                    // console.log("it is there!" + key);
                     // redirect passing the person's id to /rsvp/confirm:id
+                    this.$router.push('/rsvp/' + guestList[key].id);
                 }
             }
         },
