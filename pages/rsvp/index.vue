@@ -1,7 +1,7 @@
 <template>
   <section>
     <TopHeader />
-    <div class="sectionBody">
+    <div class="sectionBody body-styles">
       <LoginPage />
     </div>
 
@@ -22,7 +22,7 @@ export default {
   },
   data() {
     return {
-      
+
     }
   },
 }

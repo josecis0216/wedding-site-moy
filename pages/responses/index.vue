@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="body-styles">
         <top-header />
 
         <base-dialogue :show="!!error" title="An error occured!!" @close="handleError">
@@ -13,8 +13,12 @@
                 <base-spinner></base-spinner>
             </div>
             <div v-else-if="hasResponses && !isLoading">
-                <request-item v-for="req in receivedResponses" :key="req.id" :full-name="req.fullName"
-                    :bride-or-groom="req.brideOrGroom" :guests="req.guests"></request-item>
+                <b-container>
+                    <b-row>
+                        <request-item v-for="req in receivedResponses" :key="req.id" :full-name="req.fullName"
+                            :bride-or-groom="req.brideOrGroom" :guests="req.guests"></request-item>
+                    </b-row>
+                </b-container>
             </div>
             <h3 v-else>You haven't received any responses yet!</h3>
         </base-card>

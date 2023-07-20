@@ -1,7 +1,7 @@
 <template>
     <section>
         <TopHeader />
-        <div class="sectionBody">
+        <div class="sectionBody body-styles">
             <b-container>
                 <b-row>
                     <b-col>

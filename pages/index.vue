@@ -6,7 +6,7 @@
     </div>
     <TopHeader />
 
-    <b-container>
+    <b-container class="body-styles">
       <b-row>
         <b-col>
           <img v-show="loaded" src="~/static/wedding.jpg" class="icon backgroundImg" @load="onLoaded" />
@@ -54,7 +54,22 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+.body-styles {
+  min-height: 500px;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+}
+
 .header-img {
   text-align: center;
 }
@@ -107,28 +122,3 @@ img.backgroundImg {
   }
 }
 </style>
-
-<!--<b-carousel id="carousel-1" v-model="slide" :interval="4000" controls indicators background="#ababab"
-              img-width="824" img-height="280" style="text-shadow: 1px 1px 2px #333;" @sliding-start="onSlideStart"
-              @sliding-end="onSlideEnd">
-               Text slides with image -->
-<!--<b-carousel-slide caption="First slide" text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-                img-src="https://picsum.photos/1024/480/?image=52"></b-carousel-slide>
-
-              <!-Slides with custom text -->
-<!--<b-carousel-slide img-src="https://picsum.photos/1024/480/?image=54">
-                <h1>Hello world!</h1>
-              </b-carousel-slide>
-
-              <!-Slides with image only -->
-<!--<b-carousel-slide img-src="https://picsum.photos/1024/480/?image=58"></b-carousel-slide>
-
-              <!-Slides with img slot -->
-<!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
-<!--<b-carousel-slide>
-                <template #img>
-                  <img class="d-block img-fluid w-100" width="1024" height="480"
-                    src="https://picsum.photos/1024/480/?image=55" alt="image slot">
-                </template>
-              </b-carousel-slide>
-            </b-carousel>-->

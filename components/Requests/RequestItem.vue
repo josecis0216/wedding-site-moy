@@ -1,14 +1,16 @@
 <template>
-  <li>
-    <div>
-      <h2>{{ fullName }}</h2>
-      <p>Guest of the {{ brideOrGroom[0] }}</p>
-    </div>
-    <p>Bringing these guests with them:</p>
-    <p v-for="guest in guests" :key="guest.name">
-      {{ guest.name }}
-    </p>
-  </li>
+  <b-col cols="6">
+    <li>
+      <div>
+        <h2>{{ fullName }}</h2>
+        <p>Guest of the {{ brideOrGroom[0] }}</p>
+      </div>
+      <p>Bringing these guests with them:</p>
+      <p v-for="guest in guests" :key="guest">
+        {{ guest }}
+      </p>
+    </li>
+  </b-col>
 </template>
 
 <script>
@@ -27,7 +29,7 @@ export default {
     guests: {
       type: Array,
       default() {
-        return [{ name: '' }]
+        return []
       }
     }
   },
@@ -40,6 +42,7 @@ li {
   border: 1px solid #ccc;
   padding: 1rem;
   list-style-type: none;
+  min-height: 205px;
 }
 
 a {

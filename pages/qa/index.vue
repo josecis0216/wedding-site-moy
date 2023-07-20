@@ -2,7 +2,7 @@
     <section>
         <top-header />
 
-        <b-container>
+        <b-container class="body-styles">
             <b-row>
                 <b-col>
                     <h1 style="text-align:center;">Q + A</h1>
