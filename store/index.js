@@ -122,6 +122,6 @@ export default {
         },
         guestList(state) {
             return state.guestList;
-        }
+        },
     },
 };
