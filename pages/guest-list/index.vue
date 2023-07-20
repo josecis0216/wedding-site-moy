@@ -125,13 +125,13 @@ export default {
 </script>
   
 <style scoped>
-.sectionBody {
-    /* background-image: url('https://images.pexels.com/photos/313707/pexels-photo-313707.jpeg?auto=compress&cs=tinysrgb&w=960&h=450&dpr=2'); 
+/* .sectionBody {
+     background-image: url('https://images.pexels.com/photos/313707/pexels-photo-313707.jpeg?auto=compress&cs=tinysrgb&w=960&h=450&dpr=2'); 
     background-image: url('~/static/wedding-photo-rsvp.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 860px;*/
-}
+    min-height: 860px;
+} */
 
 @media only screen and (max-width: 500px) {
     .sectionBody {
