@@ -19,6 +19,7 @@
 </template>
 
 <script>
+// 
 export default {
     data() {
         return {
@@ -39,17 +40,13 @@ export default {
                     // console.log("it is there!" + key);
                     // redirect passing the person's id to /rsvp/confirm:id
                     blnFound = true;
-                } else {
-                    blnFound = false;
+                    this.$router.push('/rsvp/' + guestList[key].id);
                 }
             }
 
-            if (blnFound) {
-                this.$router.push('/rsvp/' + guestList[key].id);
-            } else {
+            if (!blnFound) {
                 alert('Sorry, we couldn\'t find your reservation, please enter your full name and try again.');
                 this.onReset();
-                // this.$router.push('/rsvp');
             }
         },
         onReset(event) {
