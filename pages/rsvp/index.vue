@@ -27,14 +27,12 @@ export default {
   },
   methods: {
     loadScroll() {
-      window.scrollTo(0, 500);
+      window.scrollY
       // console.log(window.scrollY);
     }
   },
-  created() {
-    if (process.client) {
-      window.addEventListener('load', this.loadScroll);
-    }
+  beforeMount() {
+    window.addEventListener('pageshow', this.loadScroll);
   }
 }
 </script>

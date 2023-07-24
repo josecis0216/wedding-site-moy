@@ -1,5 +1,8 @@
 <template>
   <section>
+    <div class="header-img">
+      <img src="~/static/sunflower.png" alt="sunflower header image" class="header-sunflower-img" />
+    </div>
     <top-header />
 
     <b-container class="body-styles">
