@@ -10,8 +10,6 @@
 </template>
 
 <script>
-// "@babel/eslint-parser": "^7.19.1",
-// "@nuxtjs/eslint-config": "^11.0.0",
 import TopHeader from '@/components/nav/TopHeader.vue'
 import BottomFooter from '@/components/nav/BottomFooter.vue'
 import LoginPage from '@/components/Login/LoginPage.vue'
@@ -27,9 +25,15 @@ export default {
 
     }
   },
-  created() {
-    if(process.client) {
+  methods: {
+    loadScroll() {
       window.scrollTo(0, 500);
+      // console.log(window.scrollY);
+    }
+  },
+  created() {
+    if (process.client) {
+      window.addEventListener('load', this.loadScroll);
     }
   }
 }

@@ -19,7 +19,6 @@
 </template>
 
 <script>
-// 
 export default {
     data() {
         return {
@@ -34,7 +33,7 @@ export default {
     methods: {
         onSubmit(event) {
             const guestList = this.$store.getters.guestList;
-            let blnFound = false 
+            let blnFound = false
             for (const key in guestList) {
                 if (guestList[key].fullName.localeCompare(this.form.fullName, undefined, { sensitivity: "base" }) === 0) {
                     // console.log("it is there!" + key);
