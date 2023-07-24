@@ -33,12 +33,23 @@ export default {
     methods: {
         onSubmit(event) {
             const guestList = this.$store.getters.guestList;
+            let blnFound = false 
             for (const key in guestList) {
                 if (guestList[key].fullName.localeCompare(this.form.fullName, undefined, { sensitivity: "base" }) === 0) {
                     // console.log("it is there!" + key);
                     // redirect passing the person's id to /rsvp/confirm:id
-                    this.$router.push('/rsvp/' + guestList[key].id);
+                    blnFound = true;
+                } else {
+                    blnFound = false;
                 }
+            }
+
+            if (blnFound) {
+                this.$router.push('/rsvp/' + guestList[key].id);
+            } else {
+                alert('Sorry, we couldn\'t find your reservation, please enter your full name and try again.');
+                this.onReset();
+                // this.$router.push('/rsvp');
             }
         },
         onReset(event) {
