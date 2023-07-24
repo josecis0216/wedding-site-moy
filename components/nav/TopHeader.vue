@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div class="header-img">
+      <img src="~/static/sunflower.png" alt="sunflower header image" class="header-sunflower-img" />
+    </div>
     <div>
       <h1 class="over-text fade-in">Moy & Ashley</h1>
       <p class="home-details">June 24, 2023 <br />SALT LAKE CITY, UT</p>

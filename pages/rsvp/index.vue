@@ -1,6 +1,6 @@
 <template>
   <section>
-    <TopHeader />
+    <top-header />
     <div class="sectionBody body-styles">
       <LoginPage />
     </div>
@@ -10,6 +10,8 @@
 </template>
 
 <script>
+// "@babel/eslint-parser": "^7.19.1",
+// "@nuxtjs/eslint-config": "^11.0.0",
 import TopHeader from '@/components/nav/TopHeader.vue'
 import BottomFooter from '@/components/nav/BottomFooter.vue'
 import LoginPage from '@/components/Login/LoginPage.vue'
@@ -25,6 +27,11 @@ export default {
 
     }
   },
+  created() {
+    if(process.client) {
+      window.scrollTo(0, 500);
+    }
+  }
 }
 </script>
 
